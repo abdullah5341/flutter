@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class CallScreen extends StatelessWidget {
@@ -8,37 +6,55 @@ class CallScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text(
-            "Login Page",
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(255, 240, 236, 236),
-            ),
+      // AppBar at the top
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: const Text(
+          "Login Page",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
         ),
-        body: Center(
-          child: Container(
-            height: 550,
-            width: 1000,
-            padding: const EdgeInsets.all(150),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 144, 223, 212),
-            ),
-            child: Column(
+      ),
+
+      // Page body
+      body: Padding(
+        padding: const EdgeInsets.all(20.0), // spacing from screen edges
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, // center vertically
+          children: [
+            // Flutter logo at the top
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "FLUTTER",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                const FlutterLogo(size: 100),
+                const SizedBox(height: 30),
+                const Text("FLUTTER"),
               ],
             ),
-          ),
-        ));
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Email",
+                  ),
+                ),
+                const SizedBox(height: 20),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Password",
+                  ),
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

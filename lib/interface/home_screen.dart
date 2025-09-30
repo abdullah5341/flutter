@@ -6,24 +6,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
-        backgroundColor: Colors.amber,
-        title: Text(
-          "Pakistan".toUpperCase(),
-          style: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
+        title: const Text("Home"),
       ),
-      body: Text(
-        "Pakistan".toUpperCase(),
-        style: const TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+      body: Center(
+        child: Column(
+          children: [
+            Icon(
+              Icons.star,
+              color: Colors.blue,
+              size: 100,
+            ),
+          ],
         ),
       ),
     );
