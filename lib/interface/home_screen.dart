@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<String> dostoKiList = [
+    "abdullah",
+    "sajid",
+    "sabbir",
+    "rakib",
+    "asif",
+    "kamal",
+    "jamal",
+    "babul",
+    "sabbir",
+    "rakib",
+    "asif",
+    "kamal",
+    "jamal",
+    "babul"
+  ];
+  ScrollController meraScrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -10,16 +33,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Icon(
-              Icons.star,
-              color: Colors.blue,
-              size: 100,
-            ),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: dostoKiList.length,
+        itemBuilder: (context, index) {
+          return Text(
+            dostoKiList[index],
+          );
+        },
       ),
     );
   }
